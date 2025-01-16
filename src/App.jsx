@@ -1,13 +1,11 @@
 import { createRoot } from "react-dom/client";
-import Order from "./Order";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
+
+const router = createRouter({ routeTree });
 
 const App = () => {
-  return (
-    <div>
-      <h1>My Pizzeria</h1>
-      <Order />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 const container = document.getElementById("root");
